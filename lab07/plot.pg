@@ -1,0 +1,15 @@
+#!/usr/bin/gnuplot
+reset
+set terminal png
+set xlabel "Datasize"
+set xrange [5000:50000]
+set ylabel "Time in seconds"
+set yrange [0:0.06]
+set title "Lab7 - Hash Table versus Self-Balancing Tree"
+set grid
+set style data linespoints
+plot "data.txt" using 1:2 title 'tree-insert' with lines, \
+"data.txt" using 1:3 title 'hash-insert' with lines, \
+"data.txt" using 1:4 title 'tree-lookup' with lines, \
+"data.txt" using 1:5 title 'hash-lookup' with lines
+#
